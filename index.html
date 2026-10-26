@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>減重手帳</title>
-<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="減重手帳"><meta name="theme-color" content="#F2F0EB">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="減重手帳"><meta name="theme-color" content="#FFFFFF">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,26 +9,13 @@
 <style>
 /* Layout: one narrow paper-like column, hairline-ruled sections instead of cards, fixed 5-tab bar at the bottom (Muji: plain, quiet, natural dyes). */
 :root{
-  --bg:#F2F0EB; --surface:#FAF9F6; --line:#DCD6CA; --ink:#35322D; --ink2:#766F63; --ink3:#A39C8E;
-  --accent:#7F0019; --accent-ink:#FFFFFF; --accent-soft:#EDE2E0;
-  --indigo:#51697F; --kraft:#A58B5E; --clay:#A8705A; --sage:#76896F;
-  --warn:#8F6418; --ok:#56724F;
+  --bg:#FFFCFB; --surface:#FFFFFF; --line:#F0E6E3; --ink:#4B4540; --ink2:#8A8079; --ink3:#BDB3AB;
+  --accent:#C4566D; --accent-ink:#FFFFFF; --accent-soft:#FDEEF1;
+  --indigo:#8FB2CC; --kraft:#E0BF8E; --clay:#EBA692; --sage:#93BBA1;
+  --warn:#A06E1F; --ok:#5F9170;
+  --shadow:0 8px 24px rgba(214,160,170,.14);
   --font-ui:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
   --font-num:"Jost","Noto Sans TC",system-ui,sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#1D1B18; --surface:#262420; --line:#3A3631; --ink:#ECE7DD; --ink2:#A69F92; --ink3:#797367;
-    --accent:#DB8590; --accent-ink:#1D1B18; --accent-soft:#3B2B2E;
-    --indigo:#91AAC1; --kraft:#C9AF84; --clay:#D09680; --sage:#9DB097;
-    --warn:#D5A857; --ok:#9DB99A; color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1D1B18; --surface:#262420; --line:#3A3631; --ink:#ECE7DD; --ink2:#A69F92; --ink3:#797367;
-  --accent:#DB8590; --accent-ink:#1D1B18; --accent-soft:#3B2B2E;
-  --indigo:#91AAC1; --kraft:#C9AF84; --clay:#D09680; --sage:#9DB097;
-  --warn:#D5A857; --ok:#9DB99A; color-scheme:dark;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -203,6 +190,50 @@ a.btn{text-decoration:none;display:inline-flex;align-items:center}
 .pbig .num{font-size:48px;font-weight:300;line-height:1}
 .pbig .num.over{color:var(--accent)}
 .pimg{display:block;margin:0 auto 14px;max-width:72%;max-height:230px;object-fit:contain}
+/* ---- 溫柔治癒風:白底、圓角、柔和陰影 ---- */
+html{background:#fff}
+body{background:#fff linear-gradient(180deg,#FFF1F3 0,#FFFBF7 200px,#FFFFFF 380px) no-repeat}
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:18px;margin-top:14px;box-shadow:var(--shadow)}
+.sec:first-child{border-top:1px solid var(--line)}
+.hero{background:linear-gradient(140deg,#FFEFF2 0%,#FFF8EF 55%,#F0F8F2 100%);border-radius:26px;padding:22px 20px 18px;margin-top:10px;box-shadow:var(--shadow)}
+.head h1{font-size:22px;letter-spacing:.06em;font-weight:500}
+.label{color:var(--ink2)}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 18px;color:var(--ink)}
+.btn:hover{background:var(--accent-soft)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 6px 16px rgba(196,86,109,.25)}
+.btn.primary:hover{background:var(--accent);filter:brightness(1.06)}
+.btn.text{background:transparent;border-color:transparent;color:var(--accent);box-shadow:none}
+.btn.text:hover{background:var(--accent-soft)}
+.input,.select,.textarea{border-radius:14px;background:#fff;border-color:var(--line)}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(196,86,109,.14)}
+.chip{border-radius:999px;background:#fff;border-color:var(--line)}
+.chip[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.bar{height:8px;border-radius:99px;background:#F6EEEC}
+.bar>i{border-radius:99px;background:linear-gradient(90deg,#F4B3BF,var(--accent))}
+.bar.indigo>i{background:var(--indigo)}.bar.kraft>i{background:var(--kraft)}.bar.clay>i{background:var(--clay)}
+.bar.over>i{background:var(--warn)}
+.hero .big.over .num,.pbig .num.over{color:var(--warn)}
+.tabs{background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);border-radius:22px 22px 0 0;box-shadow:0 -6px 24px rgba(214,160,170,.16)}
+.tabs button{border-radius:16px}
+.tabs button[aria-current="page"]{background:var(--accent-soft)}
+.scrim{background:rgba(90,70,70,.28);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+.sheet{background:#fff;border:0;border-radius:26px 26px 0 0;box-shadow:0 -10px 40px rgba(120,80,90,.18)}
+.authbar{background:#fff;border-radius:16px;box-shadow:var(--shadow)}
+.meal,.srow,.recipe{border-top:1px dashed var(--line)}
+.kv>div{border-bottom:1px dashed var(--line)}
+.cal button.c{border-top:0;border-radius:12px}
+.cal{border-top:0}
+.cal button.c.sel{outline:0;box-shadow:inset 0 0 0 1.5px var(--accent)}
+.iconbtn{border-radius:12px}
+.xbtn{border-radius:50%}
+.water .cups i{border-radius:3px 3px 8px 8px}
+.note{border-left-color:var(--accent-soft)}
+.pc{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:12px 8px}
+.pc:nth-child(even){margin-top:36px}
+.ktag{border-radius:11px}
+.msg.err{color:var(--accent)}
+#toast{border-radius:999px!important;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:9px 18px!important}
+
 </style>
 
 </head><body>
@@ -241,7 +272,11 @@ const API = 'https://generativelanguage.googleapis.com/v1beta/';
 // 向 Google 查詢這把 Key 目前可用的 flash 模型,挑版本號最高的幾個,不寫死版本名稱
 async function getModelCandidates(key) {
   if (MODEL_CANDIDATES) return MODEL_CANDIDATES;
-  let list = [];
+  try {
+    const c = JSON.parse(localStorage.getItem('wl-models') || 'null');
+    if (c && c.k === key.slice(-6) && Date.now() - c.t < 864e5 && c.l && c.l.length) { MODEL_CANDIDATES = c.l; return c.l; }
+  } catch (e) {}
+  let list = [], apiOk = false;
   try {
     const r = await withTimeout(fetch(API + 'models?pageSize=200&key=' + encodeURIComponent(key)), 15000);
     if (r.ok) {
@@ -253,10 +288,12 @@ async function getModelCandidates(key) {
       const stable = names.filter(n => /^gemini-\d+(\.\d+)?-flash$/.test(n)).sort((a, b) => ver(b) - ver(a));
       const lite = names.filter(n => /^gemini-\d+(\.\d+)?-flash-lite$/.test(n)).sort((a, b) => ver(b) - ver(a));
       list = stable.slice(0, 2).concat(lite.slice(0, 1));
+      apiOk = list.length > 0;
     }
   } catch (e) { console.warn('ListModels failed:', e); }
   if (list.indexOf('gemini-flash-latest') < 0) list.push('gemini-flash-latest');
   MODEL_CANDIDATES = list;
+  if (apiOk) { try { localStorage.setItem('wl-models', JSON.stringify({ t: Date.now(), k: key.slice(-6), l: list })); } catch (e) {} }
   return list;
 }
 
@@ -293,7 +330,7 @@ async function callGemini(prompt, isJson = false, extraConfig = {}, images = [])
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
-      }), images.length ? 60000 : 30000);
+      }), 30000);
 
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
@@ -311,6 +348,7 @@ async function callGemini(prompt, isJson = false, extraConfig = {}, images = [])
       // Key 無效、請求格式錯誤等不會因換模型而好轉,直接停止
       if (/API key|PERMISSION_DENIED|UNAUTHENTICATED|HTTP 40[13]/i.test(msg)) break;
       MODEL_CANDIDATES = null; // 下次重新向 Google 查詢可用模型
+      try { localStorage.removeItem('wl-models'); } catch (e) {}
     }
   }
   throw new Error(errs.join(' | '));
@@ -687,7 +725,7 @@ function viewMove(){
     <div class="big"><span class="num">${fmt(t.burn)}</span><span class="u">kcal</span></div>
     <div class="eq num">${fmt(t.mins)} 分鐘${t.steps?' · '+fmt(t.steps)+' 步':''}${t.watch?' · 以手錶數據為準':''}</div>
   </section>
-  <section class="sec"><div class="sec-h"><span class="label">運動紀錄</span><button class="btn text" data-a="addWork">+ 新增</button></div>
+  <section class="sec"><div class="sec-h"><span class="label">運動紀錄</span><span><button class="btn text" data-a="addLifts">+ 重訓</button><button class="btn text" data-a="addWork">+ 新增</button></span></div>
     ${d.workouts.length?d.workouts.map((x,i)=>`<div class="item"><div class="t"><b>${esc(x.name)}</b><div class="m num">${fmt(x.min)} 分鐘</div>${liftLines(x)}</div><div class="k">${fmt(x.kcal)} kcal</div><button class="xbtn" data-a="delWork" data-i="${i}" aria-label="刪除 ${esc(x.name)}">×</button></div>`).join(''):'<div class="msg">今天還沒有運動紀錄。從「新增」選一項,熱量會依你的體重(約 '+fmt(w,1)+' kg)估算。</div>'}
   </section>
   <section class="sec"><div class="sec-h"><span class="label">APPLE WATCH 數據</span></div>
@@ -1399,57 +1437,69 @@ function makeSticker(src,seg){
   return out.toDataURL('image/png');
 }
 const setPMsg=t=>{const el=$('#pMsg');if(el) el.textContent=t};
-async function analyzePhoto(file,token){
-  setPMsg('讀取照片…');
-  const im=await loadImage(file),big=scaledCanvas(im,1024);
-  let ai=null,aiErr='';
-  if(GEMINI_API_KEY){
-    setPMsg('辨識食物與熱量…(約 5–20 秒)');
-    try{
-      const b64=big.toDataURL('image/jpeg',.82).split(',')[1];
-      const r=await callGemini(PHOTO_PROMPT,true,{},[{mime:'image/jpeg',data:b64}]);
-      ai=Array.isArray(r)?r[0]:r;
-      if(!ai||typeof ai!=='object') ai=null;
-    }catch(e){aiErr=e.message||String(e)}
-  }
-  if(token!==S.ptoken) return null;
-  setPMsg('去背中…');
-  await new Promise(r=>setTimeout(r,30));
-  let img,seg=null;
-  try{seg=segment(big,ai&&ai.box_2d);img=makeSticker(big,seg)}
-  catch(e){console.warn('sticker',e);img=big.toDataURL('image/jpeg',.8)}
-  return {ai,aiErr,img,cut:!!(seg&&seg.alpha)};
+const setPhStatus=t=>{const el=$('#phStatus');if(el) el.textContent=t};
+const setPhNote=t=>{const el=$('#phNote');if(el) el.textContent=t};
+const stripPD=r=>{const o=Object.assign({},r);delete o._touched;return o};
+function stickerOf(big,box){
+  try{const seg=segment(big,box);return {img:makeSticker(big,seg),cut:!!seg.alpha}}
+  catch(e){console.warn('sticker',e);return {img:big.toDataURL('image/jpeg',.8),cut:false}}
 }
 function startPhotos(files){
   S.pq=files.filter(f=>/^image\//.test(f.type)||/\.(jpe?g|png|heic|heif|webp)$/i.test(f.name));
   if(S.pq.length) nextPhoto();
 }
+/* 先立刻顯示照片與去背結果,AI 辨識在背景跑,回來再自動填入(你已經自己填的欄位不會被蓋掉) */
 async function nextPhoto(){
   const file=S.pq.shift();
   if(!file){closeSheet();return}
   const rest=S.pq.slice(),token=++S.ptoken;S.pq=rest;
-  openSheet('新增食物照片',`<div class="loading" style="padding-block:40px"><div id="pMsg">讀取照片…</div>${rest.length?`<div class="cap" style="margin-top:8px">之後還有 ${rest.length} 張</div>`:''}</div>`);
+  openSheet('新增食物照片','<div class="loading" style="padding-block:40px"><div id="pMsg">讀取照片…</div></div>');
+  let big;
+  try{big=scaledCanvas(await loadImage(file),768)}
+  catch(e){
+    if(token===S.ptoken) $('#sheetBody').innerHTML=`<div class="msg err">${esc(e.message||String(e))}</div><button class="btn block" type="button" data-a="closeSheet">關閉</button>`;
+    return;
+  }
+  if(token!==S.ptoken) return;
+  await new Promise(r=>setTimeout(r,0));
+  const st=stickerOf(big,null);
+  S.pd={id:uid(),date:S.date,meal:S.pMeal,name:'',qty:'',kcal:0,p:0,c:0,f:0,img:st.img,note:'',ts:Date.now(),_touched:{}};
+  S.pmode='new';
+  $('#sheetTitle').textContent='確認食物'+(rest.length?'(後面還有 '+rest.length+' 張)':'');
+  $('#sheetBody').innerHTML=photoForm();
+  if(!GEMINI_API_KEY){setPhNote('尚未設定 Gemini Key,請自己填名稱與熱量,或按「用名稱估算熱量」。');return}
+  runAI(big,token);
+}
+async function runAI(big,token){
+  const t0=Date.now();
+  const tick=setInterval(()=>{if(token!==S.ptoken){clearInterval(tick);return}setPhStatus('AI 辨識中…已等 '+Math.round((Date.now()-t0)/1000)+' 秒(去背會在辨識完後更新,可以先自己填)')},1000);
+  setPhStatus('AI 辨識中…(去背會在辨識完後更新,可以先自己填)');
+  let ai=null,err='';
   try{
-    const r=await analyzePhoto(file,token);
-    if(!r||token!==S.ptoken) return;
-    const a=r.ai||{},nn=v=>Math.max(0,Math.round(+v||0));
-    let note=a.note?String(a.note).slice(0,80):'';
-    if(a.is_food===false) note='AI 覺得這張不像食物,請自己確認。'+note;
-    if(r.aiErr) note='Gemini 辨識失敗,請自己填熱量,或按「用名稱估算熱量」。('+r.aiErr.slice(0,90)+')';
-    else if(!GEMINI_API_KEY) note='尚未設定 Gemini Key,請自己填名稱與熱量。';
-    if(!r.cut&&!note) note='這張的背景比較複雜,只做了圓角裁切。';
-    S.pd={id:uid(),date:S.date,meal:S.pMeal,name:String(a.dish||'').slice(0,30),qty:String(a.qty||'').slice(0,24),
-      kcal:nn(a.kcal),p:r1(a.p),c:r1(a.c),f:r1(a.f),img:r.img,note,ts:Date.now()};
-    S.pmode='new';
-    $('#sheetTitle').textContent='確認食物';$('#sheetBody').innerHTML=photoForm();
-  }catch(e){
+    const b64=big.toDataURL('image/jpeg',.75).split(',')[1];
+    const r=await callGemini(PHOTO_PROMPT,true,{},[{mime:'image/jpeg',data:b64}]);
+    ai=Array.isArray(r)?r[0]:r;if(!ai||typeof ai!=='object') ai=null;
+  }catch(e){err=e.message||String(e)}
+  clearInterval(tick);
+  if(token!==S.ptoken) return;
+  setPhStatus('');
+  if(!ai){setPhNote('Gemini 辨識失敗,請自己填熱量,或按「用名稱估算熱量」。('+err.slice(0,90)+')');return}
+  const r=S.pd,T=r._touched||{},nn=v=>Math.max(0,Math.round(+v||0));
+  const fill=(k,id,v)=>{if(T[k]) return;r[k]=v;const e=$('#'+id);if(e) e.value=v?v:''};
+  fill('name','ph_name',String(ai.dish||'').slice(0,30));fill('qty','ph_qty',String(ai.qty||'').slice(0,24));
+  fill('kcal','ph_kcal',nn(ai.kcal));fill('p','ph_p',r1(ai.p));fill('c','ph_c',r1(ai.c));fill('f','ph_f',r1(ai.f));
+  let note=ai.note?String(ai.note).slice(0,80):'';
+  if(ai.is_food===false) note='AI 覺得這張不像食物,請自己確認。'+note;
+  setPhNote(note);
+  if(ai.box_2d){
+    await new Promise(x=>setTimeout(x,0));
     if(token!==S.ptoken) return;
-    $('#sheetBody').innerHTML=`<div class="msg err">${esc(e.message||String(e))}</div><button class="btn block" type="button" data-a="closeSheet">關閉</button>`;
+    const st=stickerOf(big,ai.box_2d);r.img=st.img;const im=$('#phImg');if(im) im.src=st.img;
   }
 }
 function photoForm(){
   const r=S.pd,isNew=S.pmode==='new',dt=parse(r.date);
-  return `<img class="pimg" src="${r.img}" alt="">
+  return `<img class="pimg" id="phImg" src="${r.img}" alt="">
   <div class="chips" style="margin-bottom:12px;justify-content:center">${MEALS.map(([k,n])=>`<button class="chip" type="button" data-a="pmeal" data-v="${k}" aria-pressed="${r.meal===k}">${n}</button>`).join('')}</div>
   <div class="grid2"><label class="field"><span>食物名稱</span><input class="input" id="ph_name" value="${esc(r.name)}" placeholder="例:韓式拌飯"></label>
     <label class="field"><span>份量</span><input class="input" id="ph_qty" value="${esc(r.qty)}" placeholder="例:1碗"></label></div>
@@ -1458,7 +1508,7 @@ function photoForm(){
     <label class="field"><span>蛋白質 g</span><input class="input num" id="ph_p" inputmode="decimal" value="${r.p||''}"></label>
     <label class="field"><span>碳水 g</span><input class="input num" id="ph_c" inputmode="decimal" value="${r.c||''}"></label>
     <label class="field"><span>脂肪 g</span><input class="input num" id="ph_f" inputmode="decimal" value="${r.f||''}"></label></div>
-  ${r.note?`<p class="cap" style="margin:10px 0 0">${esc(r.note)}</p>`:''}
+  <p class="cap" id="phStatus" style="margin:10px 0 0"></p><p class="cap" id="phNote" style="margin:6px 0 0">${esc(r.note||'')}</p>
   <p class="cap" style="margin:6px 0 12px">AI 估算只是參考,份量與做法不同會有落差,可以直接改數字。</p>
   <div id="phMsg" class="msg err"></div>
   <button class="btn primary block" type="button" data-a="photoSave" id="phSave">${isNew?'加入'+mealName(r.meal)+'('+(dt.getMonth()+1)+'/'+dt.getDate()+' 飲食同步記錄)':'儲存變更'}</button>
@@ -1495,20 +1545,20 @@ const A={
     const e=localEstimate(r.name);
     if(e.miss.length){m.textContent='內建食物表找不到「'+e.miss.join('、')+'」,請自己填熱量。';return}
     const t=e.list.reduce((a,x)=>({k:a.k+x.kcal,p:a.p+x.p,c:a.c+x.c,f:a.f+x.f}),{k:0,p:0,c:0,f:0});
-    $('#ph_kcal').value=Math.round(t.k);$('#ph_p').value=r1(t.p);$('#ph_c').value=r1(t.c);$('#ph_f').value=r1(t.f);m.textContent='';
+    if(r._touched)['kcal','p','c','f'].forEach(k=>r._touched[k]=1);$('#ph_kcal').value=Math.round(t.k);$('#ph_p').value=r1(t.p);$('#ph_c').value=r1(t.c);$('#ph_f').value=r1(t.f);m.textContent='';
   },
   photoSave(){
     const r=readPD(),m=$('#phMsg');
     if(!(r.kcal>0)){m.textContent='請填熱量(可按「用名稱估算熱量」)。';return}
     if(S.pmode==='new'){
       mut(r.date,d=>d.foods.push(Object.assign({id:uid()},foodFromPD(r))));
-      PhotoDB.put(r).then(()=>{S.pc[r.date]=undefined;if(S.tab==='album') render()}).catch(()=>toast('照片無法存在這個瀏覽器,但飲食已記錄。',true));
+      PhotoDB.put(stripPD(r)).then(()=>{S.pc[r.date]=undefined;if(S.tab==='album') render()}).catch(()=>toast('照片無法存在這個瀏覽器,但飲食已記錄。',true));
       const rest=S.pq.slice();closeSheet();S.pq=rest;
       S.pc[r.date]=undefined;render();toast('已加入'+mealName(r.meal)+',飲食已同步');
       if(rest.length) nextPhoto();
     }else{
       mut(r.date,d=>{const f=d.foods.find(x=>x.pid===r.id);if(f) Object.assign(f,foodFromPD(r));else d.foods.push(Object.assign({id:uid()},foodFromPD(r)))});
-      PhotoDB.put(r).then(()=>{S.pc[r.date]=undefined;render()}).catch(()=>toast('儲存照片失敗',true));
+      PhotoDB.put(stripPD(r)).then(()=>{S.pc[r.date]=undefined;render()}).catch(()=>toast('儲存照片失敗',true));
       closeSheet();toast('已更新,飲食同步修改');
     }
   },
@@ -1539,6 +1589,7 @@ const A={
     if(learned.length){S.profile.custom=((S.profile.custom||[]).concat(learned)).slice(-500);saveProfile()}
     S.stage=[];closeSheet();render();toast(learned.length?'已加入,並存進你的食物庫':'已加入'+mealName(S.fMeal));
   },
+  addLifts(){A.addWork();const i=WORKOUTS.findIndex(w=>w[0]==='重訓'),b=$('[data-a="preset"][data-i="'+i+'"]');if(b) A.preset(b)},
   addWork(){curMet=5;kcalTouched=false;minTouched=false;S.lifts=[];openSheet('新增運動',workSheet())},
   preset(el){const [n,met]=WORKOUTS[+el.dataset.i];curMet=met;document.querySelectorAll('[data-a="preset"]').forEach(b=>b.setAttribute('aria-pressed',b===el));$('#xName').value=n;kcalTouched=false;const lb=$('#liftBox');if(lb){lb.hidden=n!=='重訓';if(n==='重訓') renderLifts()};recalcWork()},
   confirmWork(){
@@ -1638,7 +1689,7 @@ document.addEventListener('input',e=>{
     const i=+row.dataset.i,k=t.dataset.st;
     if(k==='name') S.stage[i].name=t.value;
     else{S.stage[i][k]=num(t.value)||0;stageTotal()}
-  }else if(t.dataset&&t.dataset.lf){liftInput(t)}else if(t.id==='xMin'){minTouched=true;recalcWork()}
+  }else if(t.id&&t.id.indexOf('ph_')===0){const k={ph_name:'name',ph_qty:'qty',ph_kcal:'kcal',ph_p:'p',ph_c:'c',ph_f:'f'}[t.id];if(k&&S.pd&&S.pd._touched) S.pd._touched[k]=1}else if(t.dataset&&t.dataset.lf){liftInput(t)}else if(t.id==='xMin'){minTouched=true;recalcWork()}
   else if(t.id==='fSearch'){searchFood()}
   else if(t.id==='xKcal'){kcalTouched=t.value!==''}
 });
