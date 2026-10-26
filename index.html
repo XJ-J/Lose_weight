@@ -1317,7 +1317,7 @@ function viewAlbum(){
     <div class="grid2"><button class="btn primary" type="button" data-a="albumCam">拍照</button><button class="btn" type="button" data-a="albumPick">從相簿選</button></div>
     <input type="file" id="pCam" accept="image/*" capture="environment" hidden>
     <input type="file" id="pPick" accept="image/*" multiple hidden>
-    <p class="cap" style="margin:10px 0 0">拍完會自動去背、估算熱量,確認後同步記進這一天的${mealName(S.pMeal)}。${GEMINI_API_KEY?'':'尚未設定 Gemini Key,仍會去背,但熱量要自己填。'}</p>
+    <p class="cap" style="margin:10px 0 0">拍完會自動估算熱量,確認後同步記進這一天的${mealName(S.pMeal)}。${GEMINI_API_KEY?'':'尚未設定 Gemini Key,仍會去背,但熱量要自己填。'}</p>
   </section>
   <section class="sec">${!list?'<div class="loading" style="padding-block:40px">讀取中…</div>':list.length?`<div class="album">${cards}</div>`:'<div class="msg">這一天還沒有照片。拍下食物,它會變成貼紙放在這裡。</div>'}
     <p class="cap" style="margin:20px 0 0">照片只存在這支手機的瀏覽器裡,不會上傳到雲端;清除網站資料或換手機會一併消失。</p></section>`;
